@@ -1,38 +1,36 @@
 // 1000 - Hello World!
 console.log("Hello World!")
 
-// // 1001 - Extremamente Básico
-// const readline1001 = require('readline').createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-// readline1001.question(``, num1 => {
-//     readline1001.question(``, num2 => {
-//         let res = Number(num1) + Number(num2);
-//         console.log(`X = ${res}`)
-//     })
-// })
-
+// 1001 - Extremamente Básico
+function j1001(n1,n2){
+    console.log(`X = ${n1+n2}`)
+}
 
 // 1002 - Área do Círculo 
-// const readline1002 = require('readline').createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-// readline1002.question(raio =>{
-//         let area = 3.141
-// })
+function j1002(raio){
+// ????
+}
 
 // 1003 - Soma Simples
-const readline1003 = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-readline1003.question(``, a => {
-    readline1003.question(``, b =>{
-        let soma = parseInt(a) + parseInt(b);
-        console.log("SOMA = " + soma);
-    })
-})
+function j1003(a,b) {
+    console.log(`SOMA = ${a+b}`)
+}
 
 // 1004 - Produto simples
+function j1004(x,y){
+    console.log(`PROD = ${x*y}`)
+}
+
+// 1005 - Média 1
+function j1005(n1,n2){
+    let media = ((n1 * 3.5) + (n2 * 7.5))/11
+    console.log(`MEDIA = ${media.toFixed(5)}`)
+}
+
+// 1006 - Média 2
+function j1006(n1,n2,n3){
+    let media = (n1 * 0.2) + (n2 * 0.3) + (n3 * 0.5)
+    console.log(`MEDIA = ${media.toFixed(1)}`)
+}
+
+// 1007 - 
