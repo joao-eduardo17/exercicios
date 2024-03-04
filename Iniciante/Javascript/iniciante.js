@@ -8,7 +8,8 @@ function j1001(n1,n2){
 
 // 1002 - Área do Círculo 
 function j1002(raio){
-// ????
+    let area = 3.14159 * (raio**2)
+    console.log(`A=${area.toFixed(4)}`)
 }
 
 // 1003 - Soma Simples
@@ -33,4 +34,25 @@ function j1006(n1,n2,n3){
     console.log(`MEDIA = ${media.toFixed(1)}`)
 }
 
-// 1007 - 
+// 1007 - Diferença
+function j1007(a,b,c,d){
+    console.log(`DIFERENCA = ${(a*b)-(c*d)}`)
+}
+
+// 1008 - Salário
+function j1008(n, h, s){
+    console.log(`NUMBER = ${n}`)
+    console.log(`SALARY = U$ ${(h*s).toFixed(2)}`)
+}
+
+// 1009 - Salário com bônus
+function j1009(nome, sal, ven){
+    let total = sal + (ven * 0.15)
+    console.log(`TOTAL = R$ ${total.toFixed(2)}`)
+}
+
+// 1010 - Cálculo simples
+function j1010(p1,p2){
+    
+}
+
