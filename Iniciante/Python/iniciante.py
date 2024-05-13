@@ -63,6 +63,70 @@ vp1 = float(p1[2]) * int(p1[1])
 vp2 = float(p2[2]) * int(p2[1])
 print(f"VALOR A PAGAR: R$ {vp1+vp2:.2f}")
 
+# 1011 - Esfera
+raio = int(input())
+vol = (4/3) * 3.14159 * (raio**3)
+print(f"VOLUME = {vol:.3f}")
+
+# 1012 - Área
+pass
+
+# 1021 - Notas e Moedas
+d = float(input())
+n100,n50,n20,n10,n5,n2 = 0,0,0,0,0,0
+m100,m50,m25,m10,m5,m1 = 0,0,0,0,0,0
+while d > 0.01:
+    if d >= 100:
+        d-= 100.00
+        n100+=1
+    elif d >= 50.00:
+        d-= 50.00
+        n50+=1
+    elif d >= 20.00:
+        d-=20.00
+        n20+=1
+    elif d >= 10.00:
+        d-=10.00
+        n10+=1
+    elif d >= 5.00:
+        d-=5.00
+        n5+=1
+    elif d >= 2.00:
+        d-= 2.00
+        n2+=1
+    elif d >= 1.00:
+        d-=1.00
+        m100+=1
+    elif d >= 0.50:
+        d-=0.50
+        m50+=1
+    elif d >= 0.25:
+        d-=0.25
+        m25+=1
+    elif d >= 0.10:
+        d-=0.10
+        m10+=1
+    elif d >= 0.05:
+        d-=0.05
+        m5+=1
+    else:
+        d-=0.01
+        m1+=1
+
+print("NOTAS:")
+print(f"{n100} nota(s) de R$ 100.00")
+print(f"{n50} nota(s) de R$ 50.00")
+print(f"{n20} nota(s) de R$ 20.00")
+print(f"{n10} nota(s) de R$ 10.00")
+print(f"{n5} nota(s) de R$ 5.00")
+print(f"{n2} nota(s) de R$ 2.00")
+print("MOEDAS:")
+print(f"{m100} moeda(s) de R$ 1.00")
+print(f"{m50} moeda(s) de R$ 0.50")
+print(f"{m25} moeda(s) de R$ 0.25")
+print(f"{m10} moeda(s) de R$ 0.10")
+print(f"{m5} moeda(s) de R$ 0.05")
+print(f"{m1} moeda(s) de R$ 0.01")
 
 # 1043 - Triângulo
 nums = input().split()
@@ -207,3 +271,104 @@ match(ddd):
     case default:
         print('DDD nao cadastrado')
 
+# 1052 - Mês
+n = int(input())
+mes = "? January February March April May June July August September October November December".split()
+print(mes[n])
+
+# 1059 - Números Pares
+for c in range(2,101, 2):
+    print(c)
+
+# 1060 - Números Positivos
+k = 0
+for c in range(6):
+    n = float(input())
+    if n > 0:
+        k+=1
+print(f"{k} valores positivos")
+
+# 1153 - Fatorial Simples
+n = int(input())
+x = 1
+while n>0:
+    x *= n
+    n -= 1
+print(x)
+
+# 1157 - Divisores I
+n = int(input())
+for c in range(1,n+1):
+    if n%c == 0:
+        print(c)
+
+# 1589 - Bob Conduíte
+n = int(input())
+resp = []
+for c in range(n):
+    inp = input().split()
+    x = int(inp[0]) + int(inp[1])
+    resp.append(x)
+for k in resp:
+    print(k)
+
+# 1933 - Tri-du
+n = input().split()
+if int(n[0]) > int(n[1]):
+    print(n[0])
+elif int(n[0]) < int(n[1]):
+    print(n[1])
+else:
+    print(n[0])
+
+# 2006 - Identificando o Chá
+r = input()
+rs = input().split()
+x = rs.count(r)
+print(x)
+
+# 2061 - As Abas de Péricles
+n = input().split()
+aba = int(n[0])
+for c in range(int(n[1])):
+    fc = input()
+    if "f" in fc:
+        aba+=1
+    else:
+        aba-=1
+print(aba)
+
+# 2752 - Saída 6
+print("<AMO FAZER EXERCICIO NO URI>")
+print("<    AMO FAZER EXERCICIO NO URI>")
+print("<AMO FAZER EXERCICIO >")
+print("<AMO FAZER EXERCICIO NO URI>")
+print("<AMO FAZER EXERCICIO NO URI    >")
+print("<AMO FAZER EXERCICIO NO URI>")
+print("<          AMO FAZER EXERCICIO >")
+print("<AMO FAZER EXERCICIO           >")
+
+# 2791 - Feijão
+n = input().split()
+k = 1
+for c in n:
+    if c == "1":
+        break
+    k+=1
+print(k)
+
+# 2936 - Quanta Mandioca?
+n1 = int(input()) * 300
+n2 = int(input()) * 1500
+n3 = int(input()) * 600
+n4 = int(input()) * 1000
+n5 = int(input()) * 150
+print(n1+n2+n3+n4+n5+225)
+
+# 3055 - Nota Esquecida
+nota = int(input())
+media = int(input())
+for c in range(0,101):
+    if (nota+c)/2 == media:
+        print(c)
+        break

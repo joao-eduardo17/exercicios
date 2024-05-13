@@ -56,3 +56,14 @@ function j1010(p1,p2){
     
 }
 
+// 1153 - Fatorial Simples
+function j1153(n){
+    let x = 1
+    while (n > 0){
+        x*=n
+        n--
+    }
+    console.log(x)
+}
+
+
