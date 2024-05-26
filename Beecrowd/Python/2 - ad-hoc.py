@@ -46,6 +46,15 @@ print(l*4)
 n = input().split()
 print(f"{int(n[0]) % int(n[1])}")
 
+# 2434 - Saldo do Vovô
+n = input().split()
+din = [int(n[1])]
+for c in range(int(n[0])):
+    v = int(input())
+    s = din[-1] + (v)
+    din.append(s)
+print(min(din))
+
 # 2455 - Gangorra
 n = input().split()
 l1 = int(n[0]) * int(n[1])

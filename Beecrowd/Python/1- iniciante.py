@@ -72,61 +72,99 @@ print(f"VOLUME = {vol:.3f}")
 pass
 
 # 1021 - Notas e Moedas
-d = float(input())
-n100,n50,n20,n10,n5,n2 = 0,0,0,0,0,0
-m100,m50,m25,m10,m5,m1 = 0,0,0,0,0,0
-while d > 0.01:
-    if d >= 100:
-        d-= 100.00
-        n100+=1
-    elif d >= 50.00:
-        d-= 50.00
-        n50+=1
-    elif d >= 20.00:
-        d-=20.00
-        n20+=1
-    elif d >= 10.00:
-        d-=10.00
-        n10+=1
-    elif d >= 5.00:
-        d-=5.00
-        n5+=1
-    elif d >= 2.00:
-        d-= 2.00
-        n2+=1
-    elif d >= 1.00:
-        d-=1.00
-        m100+=1
-    elif d >= 0.50:
-        d-=0.50
-        m50+=1
-    elif d >= 0.25:
-        d-=0.25
-        m25+=1
-    elif d >= 0.10:
-        d-=0.10
-        m10+=1
-    elif d >= 0.05:
-        d-=0.05
-        m5+=1
-    else:
-        d-=0.01
-        m1+=1
+# nota = {100:0, 50:0, 20:0, 10:0, 5:0, 2:0}
+# moeda = {100:0, 50:0, 25:0, 10:0, 5:0, 1:0}
+# n = float(input())
+# while n:
+#     # NOTA
+#     if n >= 100.00:
+#         n -= 100.00
+#         nota[100]+=1
+#     elif n >= 50.00:
+#         n -= 50.00
+#         nota[50]+=1
+#     elif n >= 20.00:
+#         n -= 20.00
+#         nota[20]+=1
+#     elif n >= 10.00:
+#         n -= 10.00
+#         nota[10]+=1
+#     elif n >= 5.00:
+#         n -= 5.00
+#         nota[5]+=1
+#     elif n >= 2.00:
+#         n -= 2.00
+#         nota[2]+=1
+#     # MOEDA
+#     elif n >= 1.00:
+#         n -= 1.00
+#         moeda[100]+=1
+#     elif n >= 0.50:
+#         n -= 0.50
+#         moeda[50]+=1
+#     elif n >= 0.25:
+#         n -= 0.25
+#         moeda[25]+=1
+#     elif n >= 0.10:
+#         n -= 0.10
+#         moeda[10]+=1
+#     elif n >= 0.5:
+#         n -= 0.5
+#         moeda[5]+=1
+#     elif n >= 0.01:
+#         n -= 0.01
+#         moeda[1]+=1
 
-print("NOTAS:")
-print(f"{n100} nota(s) de R$ 100.00")
-print(f"{n50} nota(s) de R$ 50.00")
-print(f"{n20} nota(s) de R$ 20.00")
-print(f"{n10} nota(s) de R$ 10.00")
-print(f"{n5} nota(s) de R$ 5.00")
-print(f"{n2} nota(s) de R$ 2.00")
-print("MOEDAS:")
-print(f"{m100} moeda(s) de R$ 1.00")
-print(f"{m50} moeda(s) de R$ 0.50")
-print(f"{m25} moeda(s) de R$ 0.25")
-print(f"{m10} moeda(s) de R$ 0.10")
-print(f"{m5} moeda(s) de R$ 0.05")
-print(f"{m1} moeda(s) de R$ 0.01")
+
+
+# print("NOTAS:")
+# print(f"{n100} nota(s) de R$ 100.00")
+# print(f"{n50} nota(s) de R$ 50.00")
+# print(f"{n20} nota(s) de R$ 20.00")
+# print(f"{n10} nota(s) de R$ 10.00")
+# print(f"{n5} nota(s) de R$ 5.00")
+# print(f"{n2} nota(s) de R$ 2.00")
+# print("MOEDAS:")
+# print(f"{m100} moeda(s) de R$ 1.00")
+# print(f"{m50} moeda(s) de R$ 0.50")
+# print(f"{m25} moeda(s) de R$ 0.25")
+# print(f"{m10} moeda(s) de R$ 0.10")
+# print(f"{m5} moeda(s) de R$ 0.05")
+# print(f"{m1} moeda(s) de R$ 0.01")
+
+# 1040 - Média 3
+n = input().split()
+media = (float(n[0]) * 0.2) + (float(n[1]) * 0.3) + (float(n[2]) * 0.4) + (float(n[3]) * 0.1)
+x = str(media).find(".")
+if media >= 7.0:
+    print(f"Media: {str(media)[0:x+2]}")
+    print("Aluno aprovado.")
+elif media < 5.0:
+    print(f"Media: {str(media)[0:x+2]}")
+    print("Aluno reprovado.")
+else:
+    n2 = float(input())
+    print(f"Media: {media:.1f}")
+    print("Aluno em exame.")
+    print(f"Nota do exame: {n2:.1f}")
+    media2 = (media + n2)/2
+    if media2 >= 5.0:
+        print("Aluno aprovado.")
+    else:
+        print("Aluno reprovado.")
+    print(f"Media final: {str(media2)[0:x+2]}")
+
+# 1042 - Sort Simples
+n = input().split()
+l = []
+for c in n:
+    l.append(int(c))
+l.sort()
+for c in l:
+    print(c)
+print()
+for c in n:
+    print(c)
 
 # 1043 - Triângulo
 nums = input().split()
@@ -158,48 +196,40 @@ elif b > a:
 else:
     print("Sao Multiplos")
 
-# 1045 - Tipos de Triângulos - ERRADIO <Adbnjkfaebhjkjld
+# 1045 - Tipos de Triângulos
 nums = input().split()
-l = [float(i) for i in nums]
-a = max(l)
-ind = l.index(a)
-l.pop(ind)
-b,c = float(l[0]), float(l[1])
-while True:
-    if a >= (b+c):
-        print("NAO FORMA TRIANGULO")
-        break
-    if (a**2) == ((b**2 )+ (c**2)):
-        print("TRIANGULO RETANGULO")
-        break
-    if (a**2) > ((b**2 )+ (c**2)):
-        print("TRIANGULO OBTUSANGULO")
-    if (a**2) < ((b**2 )+ (c**2)):
-        print("TRIANGULO ACUTANGULO")
-    if a==b==c:
-        print("TRIANGULO EQUILATERO")
-        break
-    elif (a==b)!=c or (a==c)!=b or (b==c)!=a:
-        print("TRIANGULO ISOSCELES")
-        break
+n = [float(c) for c in nums]
+n.sort(reverse=True)
+a,b,c = n[0], n[1], n[2]
+if a >= (b + c):
+    print("NAO FORMA TRIANGULO")
+elif a**2 == ((b**2)+(c**2)):
+    print("TRIANGULO RETANGULO")
+elif a**2 > ((b**2)+(c**2)):
+    print("TRIANGULO OBTUSANGULO")
+elif a**2 < ((b**2)+(c**2)):
+    print("TRIANGULO ACUTANGULO")
+
+if a==b==c:
+    print("TRIANGULO EQUILATERO")
+elif a==b or a==c or b==c:
+    print("TRIANGULO ISOSCELES")
         
 # 1046 - Tempo de Jogo
-nums = input().split()
-ini, fim = int(nums[0]), int(nums[1])
-while True:
-    if ini == fim:
-        print("O JOGO DUROU 24 HORA(S)")
-        break
-    tempo = 0
-    for c in range(1,24):
-        if ini == fim:
-            tempo = c
+n = input().split()
+i,f = int(n[0]), int(n[1])
+d = 0
+if i == f:
+    d = 24
+else:
+    while i != f:
+        if i == 24:
+            i = 0
+        if i == f:
             break
-        if ini == 23:
-            ini = 0
-        ini += 1
-    print(f"O JOGO DUROU {tempo} HORA(S)")
-    break
+        i+=1
+        d+=1
+print(f"O JOGO DUROU {d} HORA(S)")
 
 # 1048 - Aumento de Salário
 sal = float(input())
@@ -288,6 +318,12 @@ for c in range(6):
         k+=1
 print(f"{k} valores positivos")
 
+# 1144 - Sequência Lógica
+n = int(input())
+for c in range(1,n+1):
+  print(f"{c} {c*c} {(c)*(c**2)}")
+  print(f"{c} {(c*c)+1} {(c)*(c**2)+1}")
+
 # 1153 - Fatorial Simples
 n = int(input())
 x = 1
@@ -321,6 +357,22 @@ elif int(n[0]) < int(n[1]):
 else:
     print(n[0])
 
+# 1985 - MacPRONALTS
+n = int(input())
+v = 0
+mc = {
+    1001: 1.5,
+    1002: 2.5,
+    1003: 3.5,
+    1004: 4.5,
+    1005: 5.5
+}
+for c in range(n):
+    n = input().split()
+    x = mc[int(n[0])]
+    v += (x*int(n[1]))
+print(f"{v:.2f}")
+
 # 2006 - Identificando o Chá
 r = input()
 rs = input().split()
@@ -337,6 +389,18 @@ for c in range(int(n[1])):
     else:
         aba-=1
 print(aba)
+
+# 2172 - Evento
+xp = []
+while True:
+    n = input().split()
+    if int(n[0]) == 0 and int(n[1]) == 0:
+        break
+    c = int(n[0]) * int(n[1])
+    xp.append(c)
+for c in xp:
+    print(c)
+
 
 # 2752 - Saída 6
 print("<AMO FAZER EXERCICIO NO URI>")
@@ -364,6 +428,11 @@ n3 = int(input()) * 600
 n4 = int(input()) * 1000
 n5 = int(input()) * 150
 print(n1+n2+n3+n4+n5+225)
+
+# 3046 - Dominó
+n = int(input())
+x = ((n+1)*(n+2))/2
+print(int(x))
 
 # 3055 - Nota Esquecida
 nota = int(input())
