@@ -72,48 +72,48 @@ print(f"VOLUME = {vol:.3f}")
 pass
 
 # 1021 - Notas e Moedas
-# nota = {100:0, 50:0, 20:0, 10:0, 5:0, 2:0}
-# moeda = {100:0, 50:0, 25:0, 10:0, 5:0, 1:0}
-# n = float(input())
-# while n:
-#     # NOTA
-#     if n >= 100.00:
-#         n -= 100.00
-#         nota[100]+=1
-#     elif n >= 50.00:
-#         n -= 50.00
-#         nota[50]+=1
-#     elif n >= 20.00:
-#         n -= 20.00
-#         nota[20]+=1
-#     elif n >= 10.00:
-#         n -= 10.00
-#         nota[10]+=1
-#     elif n >= 5.00:
-#         n -= 5.00
-#         nota[5]+=1
-#     elif n >= 2.00:
-#         n -= 2.00
-#         nota[2]+=1
-#     # MOEDA
-#     elif n >= 1.00:
-#         n -= 1.00
-#         moeda[100]+=1
-#     elif n >= 0.50:
-#         n -= 0.50
-#         moeda[50]+=1
-#     elif n >= 0.25:
-#         n -= 0.25
-#         moeda[25]+=1
-#     elif n >= 0.10:
-#         n -= 0.10
-#         moeda[10]+=1
-#     elif n >= 0.5:
-#         n -= 0.5
-#         moeda[5]+=1
-#     elif n >= 0.01:
-#         n -= 0.01
-#         moeda[1]+=1
+nota = {100:0, 50:0, 20:0, 10:0, 5:0, 2:0}
+moeda = {100:0, 50:0, 25:0, 10:0, 5:0, 1:0}
+n = float(input())
+while n:
+    # NOTA
+    if n >= 100.00:
+        n -= 100.00
+        nota[100]+=1
+    elif n >= 50.00:
+        n -= 50.00
+        nota[50]+=1
+    elif n >= 20.00:
+        n -= 20.00
+        nota[20]+=1
+    elif n >= 10.00:
+        n -= 10.00
+        nota[10]+=1
+    elif n >= 5.00:
+        n -= 5.00
+        nota[5]+=1
+    elif n >= 2.00:
+        n -= 2.00
+        nota[2]+=1
+    # MOEDA
+    elif n >= 1.00:
+        n -= 1.00
+        moeda[100]+=1
+    elif n >= 0.50:
+        n -= 0.50
+        moeda[50]+=1
+    elif n >= 0.25:
+        n -= 0.25
+        moeda[25]+=1
+    elif n >= 0.10:
+        n -= 0.10
+        moeda[10]+=1
+    elif n >= 0.5:
+        n -= 0.5
+        moeda[5]+=1
+    elif n >= 0.01:
+        n -= 0.01
+        moeda[1]+=1
 
 
 
@@ -222,7 +222,7 @@ d = 0
 if i == f:
     d = 24
 else:
-    while i != f:
+    while i != f:  
         if i == 24:
             i = 0
         if i == f:
@@ -230,6 +230,31 @@ else:
         i+=1
         d+=1
 print(f"O JOGO DUROU {d} HORA(S)")
+
+# 1047 - Tempo de Jogo com Minutos
+n = input().split()
+l = [int(c) for c in n]
+i,m1,f,m2 = l[0], l[1], l[2], l[3]
+h,m = 0,0
+if i == f and m1 == m2:
+    h = 24
+else:
+    if m1 == m2:
+        pass
+    else:
+        if m2 > m1:
+            m = m2 - m1
+        else:
+            m = 60-(m1-m2)
+            i+=1
+    while i != f:
+        if i == 24:
+            i = 0
+        if i == f:
+            break
+        i+=1
+        h+=1
+print(f"O JOGO DUROU {h} HORA(S) E {m} MINUTO(S)")
 
 # 1048 - Aumento de Salário
 sal = float(input())
@@ -301,6 +326,22 @@ match(ddd):
     case default:
         print('DDD nao cadastrado')
 
+# fudeu
+sal = float(input())
+ir = 0
+if sal < 2000.00:
+    print("Isento")
+else:
+    x = sal - 2000.01
+    ir += sal * 0.08
+    if sal > 2500.00:
+        x = sal - 2500.00
+        ir += x * 0.28
+    if sal > 1000.00:
+        x = sal - 1000.00
+        ir += x * 0.18
+print(f"R$$ {ir:.2f}")
+
 # 1052 - Mês
 n = int(input())
 mes = "? January February March April May June July August September October November December".split()
@@ -317,6 +358,108 @@ for c in range(6):
     if n > 0:
         k+=1
 print(f"{k} valores positivos")
+
+# 1061 - NAO ACABOU
+n = input().split()
+d = n[1]
+n = input().split()
+x,y,z = int(n[0]), int(n[2]), int(n[4])
+n = input().split()
+d1 = n[1]
+n = input().split()
+x1,y1,z1 = int(n[0]), int(n[2]), int(n[4])
+dia,h,m,s = 0,0,0,0
+
+if z != z1:
+    if z > z1:
+        s = 60-(z-z1)
+        y+=1
+    else:
+        s = z1-z
+if y != y1:
+    if y > y1:
+        m = 60-(y-y1)
+    else:
+        m = y1-y
+
+# 1064 - Positivos e Média
+p,m = 0,0
+for c in range(6):
+    n = float(input())
+    if n >= 0:
+        p+=1
+        m+=n
+print(f"{p} valores positivos")
+print(f"{m/p:.1f}")
+
+# 1065 - Pares entre Cinco Números
+p = 0
+for c in range(5):
+    n = int(input())
+    if n%2 == 0:
+        p+=1
+print(f"{p} valores pares")
+
+# 1066 - Pares, Ímpares, Positivos e Negativos
+p,i,pos,neg = 0,0,0,0
+for c in range(5):
+    n = int(input())
+    if n%2 == 0:
+        p+=1
+    else:
+        i+=1
+    if n > 0:
+        pos+=1
+    if n < 0:
+        neg+=1
+print(f"{p} valor(es) par(es)")
+print(f"{i} valor(es) impar(es)")
+print(f"{pos} valor(es) positivo(s)")
+print(f"{neg} valor(es) negativo(s)")
+
+# 1067 - Números Ímpares
+n = int(input())
+for c in range(1,n+1, 2):
+    print(c)
+
+# 1070 - Seis Números Ímpares
+n = int(input())
+if n%2 == 0:
+    n+=1
+    print(n)
+    for c in range(5):
+        n+=2
+        print(n)
+else:
+    for c in range(6):
+        print(n)
+        n+=2
+
+# 1071
+n1 = int(input())
+n2 = int(input())
+if n1%2 == 1:
+    if n2%2 == 1:
+        print(n1+n2)
+    else:
+        print(n1)
+else:
+    if n2%2 == 1:
+        print(n2)
+    else:
+        print(0)
+
+# 1072 - Intervalo 2
+n = int(input())
+i,o = 0,0
+for c in range(n):
+    l = int(input())
+    if l >= 10 and l <= 20:
+        i+=1
+    else:
+        o+=1
+print(f"{i} in")
+print(f"{o} out")
 
 # 1144 - Sequência Lógica
 n = int(input())
