@@ -717,6 +717,86 @@ while True:
 for k in r:
     print(k)
 
+# 1131 - Grenais
+k = 0
+j,g,i,e = 0,0,0,0
+while True:
+    jogo = input().split()
+    if int(jogo[0]) > int(jogo[1]):
+        i+=1
+    elif int(jogo[0]) < int(jogo[1]):
+        g+=1
+    else:
+        e+=1
+    j+=1
+    inp = int(input())
+    if inp == 2:
+        k+=1
+        break
+    k+=1
+for c in range(k):
+    print("Novo grenal (1-sim 2-nao)")
+print(f"{j} grenais")
+print(f"Inter:{i}")
+print(f"Gremio:{g}")
+print(f"Empates:{e}")
+if i > g:
+    print("Inter venceu mais")
+elif i < g:
+    print("Gremio venceu mais")
+else:
+    print("Nao houve vencedor")
+
+# 1132 - Múltiplos de 13
+n1 = int(input())
+n2 = int(input())
+soma = 0
+if n1 > n2:
+    for c in range(n2, n1+1):
+        if c%13 != 0:
+            soma+=c
+else:
+    for c in range(n1, n2+1):
+         if c%13 != 0:
+            soma+=c
+print(soma)
+
+# 1133 - Resto da Divisão
+n1 = int(input())
+n2 = int(input())
+if n1 > n2:
+    for c in range(n2+1, n1):
+        if c%5 == 2 or c%5 == 3:
+            print(c)
+else:
+    for c in range(n1+1, n2):
+        if c%5 == 2 or c%5 == 3:
+            print(c)
+
+# 1134 - Tipo de Combustível
+a,g,d =0,0,0
+while True:
+    i = int(input())
+    match(i):
+        case 1:
+            a+=1
+        case 2:
+            g+=1
+        case 3:
+            d+=1
+        case 4:
+            break
+print("MUITO OBRIGADO")
+print(f"Alcool: {a}")
+print(f"Gasolina: {g}")
+print(f"Diesel: {d}")
+
+# 1142 - PUM
+n = int(input())
+k = 1
+for c in range(n):
+    print(f"{k} {k+1} {k+2} PUM")
+    k+=4
 
 # 1144 - Sequência Lógica
 n = int(input())

@@ -2,7 +2,7 @@
 def isPalindrome(x: int) -> bool:
         return str(x) == str(x)[::-1]
 
-# 344. Reverse String 
+# 344. Reverse String *daily
 def reverseString(s: List[str]) -> None:
         x = ""
         for c in s:
