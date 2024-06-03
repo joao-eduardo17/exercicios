@@ -461,6 +461,263 @@ for c in range(n):
 print(f"{i} in")
 print(f"{o} out")
 
+# 1073 - Quadrado de Pares
+n = int(input())
+if n%2 == 0:
+    for c in range(2,n+1,2):
+        print(f"{c}^2 = {c**2}")
+else:
+    for c in range(2,n,2):
+        print(f"{c}^2 = {c**2}")
+
+# 1074 - Par ou Ímpar
+n = int(input())
+l = []
+for c in range(n):
+    i = int(input())
+    l.append(i)
+for c in l:
+    if c == 0:
+        print("NULL")
+        continue
+    elif c%2 == 0:
+        if c > 0:
+            print("EVEN POSITIVE")
+        else:
+            print("EVEN NEGATIVE")
+    else:
+        if c > 0:
+            print("ODD POSITIVE")
+        else:
+            print("ODD NEGATIVE")
+
+# 1075 - Resto 2
+n = int(input())
+for c in range(1,10001):
+    if c%n == 2:
+        print(c)
+
+# 1078 - Tabuada
+n = int(input())
+for c in range(1,11):
+    print(f"{c} x {n} = {n*c}")
+
+# 1079 - Médias Ponderadas
+n = int(input())
+r = []
+for c in range(n):
+    nums = input().split()
+    a,b,c = float(nums[0]) * 0.2, float(nums[1]) * 0.3, float(nums[2]) * 0.5
+    r.append((a+b+c))
+for c in r:
+    print(f"{c:.1f}")
+
+# 1080 - Maior e Posição
+nums = []
+for c in range(100):
+    n = int(input())
+    nums.append(n)
+mx = max(nums)
+print(mx)
+print(nums.index(mx)+1)
+
+# 1094 - Experiências
+n = int(input())
+c,r,s = 0,0,0
+for k in range(n):
+    ex = input().split()
+    if ex[1] == "C":
+        c+=int(ex[0])
+    elif ex[1] == "R":
+        r+=int(ex[0])
+    else:
+        s+=int(ex[0])
+tot = c+r+s
+print(f"Total: {tot} cobaias")
+print(f"Total de coelhos: {c}")
+print(f"Total de ratos: {r}")
+print(f"Total de sapos: {s}")
+print(f"Percentual de coelhos: {(100*c)/tot:.2f} %")
+print(f"Percentual de ratos: {(100*r)/tot:.2f} %")
+print(f"Percentual de sapos: {(100*s)/tot:.2f} %")
+
+# 1095 - Sequencia IJ 1
+i,j = -2,65
+while j != 0:
+    i+=3
+    j-=5
+    print(f"I={i} J={j}")
+
+# 1096 - Sequencia IJ 2
+i = 1
+while i <= 9:
+    print(f"I={i} J=7")
+    print(f"I={i} J=6")
+    print(f"I={i} J=5")
+    i+=2
+
+# 1097 - Sequencia IJ 3
+i,j = 1, 7
+while i <= 9:
+    print(f"I={i} J={j}")
+    print(f"I={i} J={j-1}")
+    print(f"I={i} J={j-2}")
+    i+=2
+    j+=2
+
+# 1098 - Sequencia IJ 4 (nao finalizado)
+i,j,c = -1,0,5
+while i < 2:
+    if c == 5:
+        i+=1
+        j+=1
+        print(f"I={int(i)} J={int(j)}")
+        print(f"I={int(i)} J={int(j+1)}")
+        print(f"I={int(i)} J={int(j+2)}")
+        c = 0
+    else:
+        print(f"I={i:.1f} J={j:.1f}")
+        print(f"I={i:.1f} J={j+1:.1f}")
+        print(f"I={i:.1f} J={j+2:.1f}")
+    i+=0.2
+    j+=0.2
+    c+=1
+
+# 1099 - Soma de Ímpares Consecutivos II
+n = int(input())
+r = []
+for c in range(n):
+    i = input().split()
+    p = [int(k) for k in i]
+    soma = 0
+    for o in range(min(p)+1, max(p)):
+        if o%2 == 1:
+            soma+=o
+    r.append(soma)
+for c in r:
+    print(c)
+
+# 1101 Sequência de Números e Soma
+r = []
+while True:
+    l = []
+    n = input().split()
+    l = [int(k) for k in n]
+    if l[0] <= 0 or l[1] <= 0:
+        break
+    resp,soma = "",0
+    for c in range(min(l), max(l)+1):
+        soma += c
+        resp += str(c) + " "
+    resp += "Sum=" + str(soma)
+    r.append(resp)
+for c in r:
+    print(c)
+
+# 1113 - Crescente e Decrescente
+r = []
+while True:
+    l = []
+    n = input().split()
+    l = [int(k) for k in n]
+    if n[0] == n[1]:
+        break
+    if l[0] > l[1]:
+        r.append("Decrescente")
+    else:
+        r.append("Crescente")
+for c in r:
+    print(c)
+
+# 1114 - Senha Fixa
+r = []
+while True:
+    n = int(input())
+    if n == 2002:
+        r.append("Acesso Permitido")
+        break
+    else:
+        r.append("Senha Invalida")
+for c in r:
+    print(c)
+
+# 1115 - Quadrante
+r = []
+while True:
+    l = []
+    n = input().split()
+    l = [int(c) for c in n]
+    if l[0] == 0 or l[1] == 0:
+        break
+    if l[0] > 0:
+        if l[1] > 0:
+            r.append("primeiro")
+        else:
+            r.append("quarto")
+    else:
+        if l[1] > 0:
+            r.append("segundo")
+        else:
+            r.append("terceiro")
+for c in r:
+    print(c)
+
+# 1116 - Dividindo X por Y
+n = int(input())
+r = []
+for c in range(n):
+    i = input().split()
+    l = []
+    l = [int(c) for c in i]
+    if l[1] == 0:
+        r.append("divisao impossivel")
+    else:
+        r.append(l[0]/l[1])
+for k in r:
+    print(k)
+
+# 1117 - Validação de Nota
+media,c,ni = 0,0,0
+while True:
+    if c == 2:
+        break
+    n = float(input())
+    if n < 0 or n > 10:
+        ni+=1
+        continue
+    media+=n
+    c+=1
+for c in range(ni):
+    print("nota invalida")
+print(f"media = {media/2:.2f}")
+
+# 1118 - Várias Notas Com Validação
+r = []
+c,media = 0,0
+while True:
+    if c == 2:
+        i = int(input())
+        r.append("novo calculo (1-sim 2-nao)")
+        if i != 1 and i != 2:
+            continue
+        if i == 1:
+            c = 0
+            continue
+        else:
+            break
+    i = float(input())
+    if i > 10 or i < 0:
+        r.append("nota invalida")
+        continue
+    media+=i
+    c+=1
+    if c == 2:
+        r.append(f"media = {media/2:.2f}")
+        media = 0
+for k in r:
+    print(k)
+
+
 # 1144 - Sequência Lógica
 n = int(input())
 for c in range(1,n+1):
