@@ -1,9 +1,24 @@
+# 1. Two Sum
+def twoSum(nums: list[int], target: int) -> list[int]:
+        l = []
+        for i, c in enumerate(nums):
+            for i1, k in enumerate(nums):
+                if i == i1:
+                    continue
+                if (c + k) == target:
+                    l.append(i)
+                    l.append(i1)
+                    break
+            if len(l) > 0:
+                break 
+        return l
+
 # 9. Palindrome Number
 def isPalindrome(x: int) -> bool:
         return str(x) == str(x)[::-1]
 
 # 344. Reverse String *daily
-def reverseString(s: List[str]) -> None:
+def reverseString(s: list[str]) -> None:
         x = ""
         for c in s:
             x+=c

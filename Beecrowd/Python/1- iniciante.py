@@ -804,6 +804,20 @@ for c in range(1,n+1):
   print(f"{c} {c*c} {(c)*(c**2)}")
   print(f"{c} {(c*c)+1} {(c)*(c**2)+1}")
 
+# 1146 - Sequências Crescentes
+while True:
+    x = ""
+    n = int(input())
+    if n == 0:
+        break
+    for c in range(1,n+1):
+        x+= str(c)
+        x+=" "
+    print(x.strip())
+
+# 1149 - Somando Inteiros Consecutivos
+
+
 # 1153 - Fatorial Simples
 n = int(input())
 x = 1
@@ -817,6 +831,15 @@ n = int(input())
 for c in range(1,n+1):
     if n%c == 0:
         print(c)
+
+# 1174 - Seleçao em Vetor I
+l = []
+for c in range(100):
+    n = float(input())
+    l.append(n)
+for i,e in enumerate(l):
+    if e <= 10:
+        print(f"A[{i}] = {e:.1f}")
 
 # 1589 - Bob Conduíte
 n = int(input())
