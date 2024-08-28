@@ -1,4 +1,4 @@
-# 1022 - TDA Racional
+# 1022 - TDA Racional - ERRADO
 n = int(input())
 r = []
 for c in range(n):

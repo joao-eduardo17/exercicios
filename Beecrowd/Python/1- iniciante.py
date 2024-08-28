@@ -816,7 +816,17 @@ while True:
     print(x.strip())
 
 # 1149 - Somando Inteiros Consecutivos
-
+nums = input().split()
+n = [int(k) for k in nums]
+l = []
+for c in n:
+    if c > 0:
+        l.append(c)
+x,y = l[0], l[1]
+soma = 0
+for k in range(y):
+    soma += x+k
+print(soma)
 
 # 1153 - Fatorial Simples
 n = int(input())
@@ -840,6 +850,17 @@ for c in range(100):
 for i,e in enumerate(l):
     if e <= 10:
         print(f"A[{i}] = {e:.1f}")
+
+# 1564 - Vai Ter Copa?
+while True:
+    try:
+        i = int(input())
+        if i >= 1:
+            print("vai ter duas!")
+        else:
+            print("vai ter copa!")
+    except EOFError:
+        break
 
 # 1589 - Bob Conduíte
 n = int(input())
@@ -944,3 +965,12 @@ for c in range(0,101):
     if (nota+c)/2 == media:
         print(c)
         break
+
+# 3241 - Ajude um Candidato a PhD!
+n = int(input())
+for c in range(n):
+    i = input().replace("+", " ").split()
+    if "P=NP" in i:
+        print("skipped")
+    else:
+        print(int(i[0]) + int(i[1]))

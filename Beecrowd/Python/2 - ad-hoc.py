@@ -55,6 +55,33 @@ for c in range(int(n[0])):
     din.append(s)
 print(min(din))
 
+# 2451 - PacMan
+n = int(input())
+v, co, tot = [], 0, 0
+for c in range(n):
+    inp = input()
+    if co % 2 == 1:
+        inp = inp[::-1]
+    for k in inp:
+        if k == "o":
+            tot+=1
+        if k == "A":
+            v.append(tot)
+            tot=0
+    co+=1
+v.append(tot)
+print(max(v))
+
+# 2454 - Flíper
+n = input().split()
+if n[0] == "0":
+    print("C")
+else:
+    if n[1] == "0":
+        print("B")
+    else:
+        print("A")
+
 # 2455 - Gangorra
 n = input().split()
 l1 = int(n[0]) * int(n[1])

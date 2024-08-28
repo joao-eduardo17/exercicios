@@ -17,7 +17,7 @@ def twoSum(nums: list[int], target: int) -> list[int]:
 def isPalindrome(x: int) -> bool:
         return str(x) == str(x)[::-1]
 
-# 344. Reverse String *daily
+# 344. Reverse String
 def reverseString(s: list[str]) -> None:
         x = ""
         for c in s:
@@ -26,6 +26,16 @@ def reverseString(s: list[str]) -> None:
         s.clear()
         for c in x:
             s.append(c)
+
+# 1051. Height Checker
+def heightChecker(heights: list[int]) -> int:
+        k = 0
+        exp = heights.copy()
+        hei = sorted(heights)
+        for c in range(len(heights)):
+            if exp[c] != hei[c]:
+                k+=1
+        return k
 
 # 1704. Determine if String Halves Are Alike
 def halvesAreAlike(s: str) -> bool:
@@ -40,7 +50,7 @@ def halvesAreAlike(s: str) -> bool:
                 v2+=1
         return v1 == v2
 
-# 3110. Score of a String *daily
+# 3110. Score of a String
 def scoreOfString(s: str) -> int:
         lista = [ord(c) for c in s]
         i = len(lista) - 1
