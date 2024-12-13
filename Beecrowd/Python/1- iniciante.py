@@ -872,6 +872,11 @@ for c in range(n):
 for k in resp:
     print(k)
 
+# 1930 - Tomadas
+n = input().split()
+nums = [int(c) for c in n]
+print((nums[0]-1)+(nums[1]-1)+(nums[2]-1)+(nums[3]))
+
 # 1933 - Tri-du
 n = input().split()
 if int(n[0]) > int(n[1]):
@@ -925,6 +930,22 @@ while True:
 for c in xp:
     print(c)
 
+# 2234 - Cachorros-Quentes
+n = input().split()
+print(f"{int(n[0]) / int(n[1]):.2f}")
+
+# 2344 - Notas da Prova
+n = int(input())
+if n == 0:
+    print("E")
+elif n >= 1 and n <= 35:
+    print("D")
+elif n >= 36 and n <= 60:
+    print("C")
+elif n >= 61 and n <= 85:
+    print("B")
+else:
+    print("A")
 
 # 2752 - Saída 6
 print("<AMO FAZER EXERCICIO NO URI>")

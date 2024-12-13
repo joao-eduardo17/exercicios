@@ -17,6 +17,9 @@ else:
     c = 100
 print(f"Top {c}")
 
+# 2058 - Triângulos e Polígonos Regulares
+n = int(input())
+print(n-2)
 
 # 2339 - Aviões de Papel
 n = input().split()
@@ -41,6 +44,11 @@ print(total)
 # 2413 - Busca na Internet
 l = int(input())
 print(l*4)
+
+# 2414 - Desafio do Maior Número
+x = input().split()
+l = [int(c) for c in x]
+print(max(l))
 
 # 2416 - Corrida
 n = input().split()
@@ -93,6 +101,10 @@ elif l1 > l2:
 else:
     print(1)
 
+# 2679 - Sucessor Par
+n = int(input())
+print(n+1 if n%2==1 else n+2)
+
 # 2756 - Saída 10
 print("       A")
 print("      B B")
@@ -104,4 +116,20 @@ print("     C   C")
 print("      B B")
 print("       A")
 
-
+# 3048 - Sequência Secreta
+n = int(input())
+nums = []
+soma = 0
+ant = 0
+for c in range(n):
+    nums.append(int(input()))
+for c in range(len(nums)):
+    if c == 0:
+        ant = nums[c]
+        soma+=1
+    elif nums[c] == ant:
+        continue
+    else:
+        ant = nums[c]
+        soma+=1
+print(soma) 
