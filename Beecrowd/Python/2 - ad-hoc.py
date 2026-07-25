@@ -33,6 +33,13 @@ dese = int(input())
 pres = int(input())
 print(dese-pres)
 
+# 2377 - Pedágio
+x = input().split()
+y = input().split()
+tot, ped, km, val_ped = int(x[0]), int(x[1]), int(y[0]), int(y[1])
+media = tot//ped
+print((tot * km) + (media * val_ped))
+
 # 2388 - Tacógrafo
 n = int(input())
 total = 0

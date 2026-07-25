@@ -836,6 +836,17 @@ while n>0:
     n -= 1
 print(x)
 
+# 1154 - Idades
+soma, c = 0, 0
+while True:
+    var = int(input())
+    if var < 0:
+        break
+    soma+=var
+    c+=1
+    
+print(f"{soma/c:.2f}")
+
 # 1157 - Divisores I
 n = int(input())
 for c in range(1,n+1):
@@ -871,6 +882,24 @@ for c in range(n):
     resp.append(x)
 for k in resp:
     print(k)
+
+# 1865 - Mjölnir
+n = int(input())
+for c in range(n):
+    nome = input().split()
+    if nome[0] == "Thor":
+        print("Y")
+    else:
+        print("N")
+
+# 1866 - Conta
+n = int(input())
+for c in range(n):
+    x = int(input())
+    if x % 2 == 0:
+        print(0)
+        continue
+    print(1)
 
 # 1930 - Tomadas
 n = input().split()
@@ -946,6 +975,17 @@ elif n >= 61 and n <= 85:
     print("B")
 else:
     print("A")
+
+# 2702 - Escolha Difícil
+disp = input().split()
+pedi = input().split()
+x = 0
+for c in range(3):
+    if int(disp[c]) > int(pedi[c]):
+        continue
+    x += int(pedi[c]) - int(disp[c])
+print(x)
+
 
 # 2752 - Saída 6
 print("<AMO FAZER EXERCICIO NO URI>")
